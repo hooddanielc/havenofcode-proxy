@@ -22,10 +22,10 @@ services:
     ports:
       - 8081:80
     environment:
-      - "HOC_GITHUB_CLIENT=ceebce24d13198175869"
       - "HOC_MYSQL_HOST=legacy-havenofcode.cem5dcxo5hdt.us-west-2.rds.amazonaws.com"
-      - "HOC_GITHUB_SECRET=0cbf82e7605c575121be56dd5922ca8045bba98f"
       - "HOC_MYSQL_NAME=havenofc"
+      - "HOC_GITHUB_CLIENT=ceebce24d13198175869"
+      - "HOC_GITHUB_SECRET"
       - "HOC_MYSQL_USER"
       - "HOC_MYSQL_PASS"
     volumes:
