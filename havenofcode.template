@@ -12,7 +12,7 @@ server {
 
 server {
     listen ${HOC_PROXY_PORT};
-    server_name ${HOC_PROXY_HOST};
+    server_name ${HOC_PROXY_HOST} www.${HOC_PROXY_HOST};
 
     location / {
         proxy_pass http://${HOC_HAVENOFCODE_HTTP_HOST}:${HOC_HAVENOFCODE_HTTP_PORT};
