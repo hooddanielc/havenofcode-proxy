@@ -1,0 +1,20 @@
+server {
+    listen ${HOC_PROXY_PORT};
+    location / {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+    }
+    error_page 500 502 503 504  /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
+    }
+}
+
+server {
+    listen ${HOC_PROXY_PORT};
+    server_name ${HOC_PROXY_HOST};
+
+    location / {
+        proxy_pass http://${HOC_HAVENOFCODE_HTTP_HOST}:${HOC_HAVENOFCODE_HTTP_PORT};
+    }
+}
